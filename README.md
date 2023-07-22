@@ -1,5 +1,11 @@
 # Llama 2 simple chat
 
+## Demo Llama2 simple chat
+![Demo](/media/llama2-demo.gif)
+
+This animated GIF demonstrates how Llama 2 looks in action within a terminal environment.
+
+
 # Prerequisite
 
 Before proceeding, ensure you have completed the following steps:
@@ -67,8 +73,3 @@ For more information and usage examples, please refer to the official [Llama2](h
 
 To check whether CUDA is available or installed on your Windows system, you can run the `CUDA_Check.py` script.
 This code checks whether CUDA is available for use with PyTorch. The output will be either "`CUDA is available!`" or "`CUDA is not available. Using CPU instead.`" depending on whether CUDA is available on the system.
-
-## Demo Llama2 simple chat
-![Demo](/media/llama2-demo.gif)
-
-This animated GIF demonstrates how Llama 2 looks in action within a terminal environment.
