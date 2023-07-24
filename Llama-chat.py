@@ -2,6 +2,9 @@ from typing import Optional
 import fire
 from llama import Llama
 import os
+import textwrap
+import shutil
+terminal_width = shutil.get_terminal_size().columns
 
 def main(
     ckpt_dir: str,
@@ -53,7 +56,8 @@ def main(
             top_p=top_p,
         )
         
-        print(str(results[0]["generation"]["content"]))
+        # print(str(results[0]["generation"]["content"]))
+        print(textwrap.fill(str(results[0]["generation"]["content"]), width=terminal_width))
         
         # Check if the user wants to clear terminal history
         clr_terminal = input("Do you want to clear ur terminal? (yes/no): ")
