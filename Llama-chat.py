@@ -1,14 +1,14 @@
 from typing import Optional
 import fire
 from llama import Llama
-
+import os
 
 def main(
     ckpt_dir: str,
     tokenizer_path: str,
-    temperature: float = 0.6,
-    top_p: float = 0.9,
-    max_seq_len: int = 2048,
+    temperature: float = 0.1,
+    top_p: float = 1,
+    max_seq_len: int = 4096,
     max_batch_size: int = 4,
     max_gen_len: Optional[int] = None,
 ):
@@ -54,10 +54,18 @@ def main(
         )
         
         print(str(results[0]["generation"]["content"]))
-                # Check if the user wants to continue chatting or exit the loop
+        
+        # Check if the user wants to clear terminal history
+        clr_terminal = input("Do you want to clear ur terminal? (yes/no): ")
+        if clr_terminal.lower() == "yes":
+            os.system('cls')
+
+        # Check if the user wants to continue chatting or exit the loop
         # user_response = input("Do you want to continue chatting? (yes/no): ")
         # if user_response.lower() != "yes":
         #     break
 
-if __name__ == "__main__":
-    fire.Fire(main)
+fire.Fire(main)
+    
+# if __name__ == "__main__":
+#     fire.Fire(main)
